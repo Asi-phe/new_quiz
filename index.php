@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>My Quiz</title>
+<link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -14,7 +15,7 @@ error_reporting(0);
 $title = "Take My Quiz";
 $address = "index.html";
 $randomizequestions ="yes"; // set up as "no" to show questions without randomization
-/
+
 
 $a = array(
 1 => array(
