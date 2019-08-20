@@ -229,7 +229,7 @@ if ($question==0){
 <HTML><HEAD><TITLE>Multiple Choice Questions:  <?php print $title; ?></TITLE>
 
 <SCRIPT LANGUAGE='JavaScript'>
-<!-- 
+/For the score/
 function Goahead (number){
         if (document.percentaje.response.value==0){
                 if (number==<?php print $a[$randval2][6] ; ?>){
@@ -295,8 +295,8 @@ function Goahead (number){
 ?>
 <TR><TD ALIGN=Center>
 The Quiz has finished
-<BR>Percentaje of correct responses: <?php print $percentaje ; ?> %
-<p><A HREF="<?php print $address; ?>">Home Page</a>
+<BR>FOR CORRECT RESPONSES: <?php print $percentaje ; ?> %
+<p><A HREF="<?php print $address; ?>">First Page</a>
 
 <?php } ?>
 
