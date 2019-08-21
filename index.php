@@ -300,15 +300,45 @@ function Goahead (number){
 ?>
 <TR><TD ALIGN=Center>
 The Quiz has finished
-<BR>FOR CORRECT RESPONSES: <?php print $percentaje ; ?> %
+<BR>FOR CORRECT RESPONSES: <?php print $percentage ; ?> %
 <p><A HREF="<?php print $address; ?>">First Page</a>
 
 <?php } ?>
 
 </TD></TR>
 </TABLE>
-
+<div class="image">
+<img src="images/asiphe.jpg" class="img-fluid" alt="Responsive image">
+</div>
 </CENTER>
-<img src="../images/asiphe.jpg" class="img-fluid" alt="Responsive image">
+<?php
+}if($percentaje <= 40 ){
+?>
+<TR><TD ALIGN=Center>
+The Quiz has finished 
+<br> You can try harder
+<BR>Percentage of correct responses: <?php print $percentaje ; ?> %
+<p><A href="index.php">Home Page</a>
+<?php } 
+else if($percentaje >= 41 &&  $percentaje <=70){
+    ?>
+    <TR><TD ALIGN=Center>
+    The Quiz has finished
+    <br>well done keep going
+    <BR>Percentage of correct responses: <?php print $percentaje ; ?> %
+    <p><A href="index.php">Home Page</a>
+    <?php } 
+else{
+?>
+<TR><TD ALIGN=Center>
+The Quiz has finished work harder
+<BR>Percentage of correct responses: <?php print $percentaje ; ?> %
+<p><A href="index.php">Home Page</a>
+<?php } ?>
+</TD></TR>
+</TABLE>
+</TD></TR>
+</TABLE>
+
 </BODY>
 </HTML>
