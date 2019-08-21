@@ -3,11 +3,13 @@
 <head>
 <title>My Quiz</title>
 <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Acme|Great+Vibes|Lexend+Deca&display=swap" rel="stylesheet">
 </head>
 <body>
 
 
  <link rel="stylesheet" type="text/css" href="css/main.css">
+ <h1>HOW MUCH DO U KNOW ABOUT TECH? </h1>
 <?php
 error_reporting(0);
 
@@ -304,5 +306,6 @@ The Quiz has finished
 </TABLE>
 
 </CENTER>
+<img src="../images/asiphe.jpeg" class="img-fluid" alt="Responsive image">
 </BODY>
 </HTML>

@@ -1,6 +1,14 @@
 body{
-    background-color:blue;
+   
+    color: beige;
+    background-color: blue;
+   
+   
+
 }
-p{
+h1{
+ 
     font-family: 'Great Vibes', cursive;
+font-family: 'Lexend Deca', sans-serif;
+font-family: 'Acme', sans-serif;
 }
