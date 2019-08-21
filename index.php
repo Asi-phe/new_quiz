@@ -225,9 +225,9 @@ $ok=$_POST["ok"] ;
 if ($question==0){
         $question=0;
         $ok=0;
-        $percentaje=0;
+        percentage=0;
         }else{
-        $percentaje= Round(100*$ok / $question);
+        percentage= Round(100*$ok / $question);
         }
 ?>
 
@@ -267,7 +267,7 @@ function Goahead (number){
 <TR><TD ALIGN=RIGHT>
 <FORM METHOD=POST NAME="percentaje" ACTION="<?php print $URL; ?>">
 
-<BR>Percentaje of correct responses: <?php print $percentaje; ?> %
+<BR>Percentaje of correct responses: <?php print percentage; ?> %
 <BR><input type=submit value="Next >>">
 <input type=hidden name=response value=0>
 <input type=hidden name=question value=<?php print $question; ?>>
@@ -312,27 +312,27 @@ The Quiz has finished
 </div>
 </CENTER>
 <?php
-}if($percentaje <= 40 ){
+if(percentage <= 40 ){
 ?>
 <TR><TD ALIGN=Center>
 The Quiz has finished 
 <br> You can try harder
-<BR>Percentage of correct responses: <?php print $percentaje ; ?> %
+<BR>Percentage of correct responses: <?php print percentage ; ?> %
 <p><A href="index.php">Home Page</a>
 <?php } 
-else if($percentaje >= 41 &&  $percentaje <=70){
+else if(percentage >= 41 &&  percentage <=70){
     ?>
     <TR><TD ALIGN=Center>
-    The Quiz has finished
-    <br>well done keep going
-    <BR>Percentage of correct responses: <?php print $percentaje ; ?> %
+    Well done
+    <br>But you can do more
+    <BR>Percentage of correct responses: <?php print percentage ; ?> %
     <p><A href="index.php">Home Page</a>
     <?php } 
 else{
 ?>
 <TR><TD ALIGN=Center>
 The Quiz has finished work harder
-<BR>Percentage of correct responses: <?php print $percentaje ; ?> %
+<BR>Percentage of correct responses: <?php print percentage ; ?> %
 <p><A href="index.php">Home Page</a>
 <?php } ?>
 </TD></TR>
