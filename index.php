@@ -18,10 +18,10 @@ error_reporting(0);
 
 
 $title = "Take My Quiz";
-$address = "index.html";
+$address = "index.php";
 $randomizequestions ="yes"; // set up as "no" to show questions without randomization
 
-
+//my question created in array and the answers
 $a = array(
 1 => array(
    0 => " PHP stands for?",
@@ -204,7 +204,7 @@ $a = array(
    6 => 1
 ),
 );
-
+//maximum value of 20 correct questions,for when the user get the correct quesrion right it has to echo some percentage.
 $max=20;
 
 $question=$_POST["question"] ;
@@ -225,16 +225,17 @@ $ok=$_POST["ok"] ;
 if ($question==0){
         $question=0;
         $ok=0;
-        percentage=0;
+        $percentaje=0;
         }else{
-        percentage= Round(100*$ok / $question);
+        $percentaje= Round(100*$ok / $question);
         }
 ?>
 
 <HTML><HEAD><TITLE>Multiple Choice Questions:  <?php print $title; ?></TITLE>
 
 <SCRIPT LANGUAGE='JavaScript'>
-/For the score/
+//for score,the more u get one right the is an increament of 1. 
+//And whenever the user make a wrong selection the is a decreament on 1.
 function Goahead (number){
         if (document.percentaje.response.value==0){
                 if (number==<?php print $a[$randval2][6] ; ?>){
@@ -260,7 +261,8 @@ function Goahead (number){
 
 <CENTER>
 <H1><?php print "$title"; ?></H1>
-<TABLE BORDER=0 CELLSPACING=5 WIDTH=500>
+
+<table boder=0 cellspacing=5 width=500>
 
 <?php if ($question<$max){ ?>
 
@@ -312,27 +314,26 @@ The Quiz has finished
 </div>
 </CENTER>
 <?php
-if(percentage <= 40 ){
+ if($percentage <= 40 ){
 ?>
 <TR><TD ALIGN=Center>
 The Quiz has finished 
 <br> You can try harder
-<BR>Percentage of correct responses: <?php print percentage ; ?> %
+<BR>Percentage of correct responses: <?php print $percentage ; ?> %
 <p><A href="index.php">Home Page</a>
 <?php } 
-else if(percentage >= 41 &&  percentage <=70){
+else if($percentage >= 41 &&  $percentage <=70){
+        echo "Well done ";
     ?>
-    <TR><TD ALIGN=Center>
-    Well done
-    <br>But you can do more
-    <BR>Percentage of correct responses: <?php print percentage ; ?> %
+     <?php print $percentage ; ?> %
     <p><A href="index.php">Home Page</a>
     <?php } 
 else{
+        echo "You can do more";
 ?>
-<TR><TD ALIGN=Center>
-The Quiz has finished work harder
-<BR>Percentage of correct responses: <?php print percentage ; ?> %
+
+
+<BR>Percentage of correct responses: <?php print $percentage ; ?> %
 <p><A href="index.php">Home Page</a>
 <?php } ?>
 </TD></TR>
