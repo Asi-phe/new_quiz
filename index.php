@@ -323,7 +323,7 @@ The Quiz has finished
 <p><A href="index.php">Home Page</a>
 <?php } 
 else if($percentage >= 41 &&  $percentage <=70){
-        echo "Well done ";
+        echo "Well done ,keep on trying";
     ?>
      <?php print $percentage ; ?> %
     <p><A href="index.php">Home Page</a>
@@ -333,7 +333,7 @@ else{
 ?>
 
 
-<BR>Percentage of correct responses: <?php print $percentage ; ?> %
+<BR>Showing some score <?php print $percentage ; ?> %
 <p><A href="index.php">Home Page</a>
 <?php } ?>
 </TD></TR>
