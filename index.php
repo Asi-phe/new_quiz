@@ -204,72 +204,62 @@ $a = array(
    6 => 1
 ),
 );
-//maximum value of 20 correct questions,for when the user get the correct quesrion right it has to echo some percentage.
+
+
+// total number of questions
 $max=20;
-
 $question=$_POST["question"] ;
-
+// for counting the score
 if ($_POST["Randon"]==0){
-        if($randomizequestions =="yes"){$randval = mt_rand(1,$max);}else{$randval=1;}
-        $randval2 = $randval;
-        }else{
-        $randval=$_POST["Randon"];
-        $randval2=$_POST["Randon"] + $question;
-                if ($randval2>$max){
-                $randval2=$randval2-$max;
-                }
-        }
-        
+       if($randomizequestions =="yes"){$randval = mt_rand(1,$max);}else{$randval=1;}
+       $randval2 = $randval;
+       }else{
+       $randval=$_POST["Randon"];
+       $randval2=$_POST["Randon"] + $question;
+               if ($randval2>$max){
+               $randval2=$randval2-$max;
+               }
+       }
 $ok=$_POST["ok"] ;
-
 if ($question==0){
-        $question=0;
-        $ok=0;
-        $percentaje=0;
-        }else{
-        $percentaje= Round(100*$ok / $question);
-        }
+       $question=0;
+       $ok=0;
+       $percentaje=0;
+       }else{
+       $percentaje= Round(100*$ok / $question);
+       }
 ?>
-
 <HTML><HEAD><TITLE>Multiple Choice Questions:  <?php print $title; ?></TITLE>
 
 <SCRIPT LANGUAGE='JavaScript'>
-//for score,the more u get one right the is an increament of 1. 
-//And whenever the user make a wrong selection the is a decreament on 1.
 function Goahead (number){
-        if (document.percentaje.response.value==0){
-                if (number==<?php print $a[$randval2][6] ; ?>){
-                        document.percentaje.response.value=1
-                        document.percentaje.question.value++
-                        document.percentaje.ok.value++
-                }else{
-                        document.percentaje.response.value=1
-                        document.percentaje.question.value++
-                }
-        }
-        if (number==<?php print $a[$randval2][6] ; ?>){
-                document.question.response.value="Correct"
-        }else{
-                document.question.response.value="Incorrect"
-        }
+       if (document.percentaje.response.value==0){
+               if (number==<?php print $a[$randval2][6] ; ?>){
+                       document.percentaje.response.value=1
+                       document.percentaje.question.value++
+                       document.percentaje.ok.value++
+               }
+               else{
+                       document.percentaje.response.value=1
+                       document.percentaje.question.value++
+               }
+       }
+if (number==<?php print $a[$randval2][6] ; ?>){
+               document.question.response.value="accepted"
+       }else{
+               document.question.response.value="accepted"
+       }
 }
-// -->
 </SCRIPT>
-
 </HEAD>
-<BODY BGCOLOR=FFFFFF>
-
+<!-- setting display settings -->
 <CENTER>
 <H1><?php print "$title"; ?></H1>
-
-<table boder=0 cellspacing=5 width=500>
-
+<TABLE BORDER=0 CELLSPACING=5 WIDTH=500>
 <?php if ($question<$max){ ?>
-
 <TR><TD ALIGN=RIGHT>
 <FORM METHOD=POST NAME="percentaje" ACTION="<?php print $URL; ?>">
-
-<BR>Percentaje of correct responses: <?php print percentage; ?> %
+<BR>Percentaje of correct responses: <?php print $percentaje; ?> %
 <BR><input type=submit value="Next >>">
 <input type=hidden name=response value=0>
 <input type=hidden name=question value=<?php print $question; ?>>
@@ -279,67 +269,64 @@ function Goahead (number){
 </FORM>
 <HR>
 </TD></TR>
-
 <TR><TD>
+<!-- creating post method -->
 <FORM METHOD=POST NAME="question" ACTION="">
 <?php print "<b>".$a[$randval2][0]."</b>"; ?>
- 
-<BR>     <INPUT TYPE=radio NAME="option" VALUE="1"  onClick=" Goahead (1);"><?php print $a[$randval2][1] ; ?>
-<BR>     <INPUT TYPE=radio NAME="option" VALUE="2"  onClick=" Goahead (2);"><?php print $a[$randval2][2] ; ?>
+<BR>  <form>   <INPUT TYPE=radio NAME="option" VALUE="1"  onClick=" Goahead (1);"><?php print $a[$randval2][1] ; ?>
+<BR>  <form>   <INPUT TYPE=radio NAME="option" VALUE="2"  onClick=" Goahead (2);"><?php print $a[$randval2][2] ; ?>
 <?php if ($a[$randval2][3]!=""){ ?>
-<BR>     <INPUT TYPE=radio NAME="option" VALUE="3"  onClick=" Goahead (3);"><?php print $a[$randval2][3] ; } ?>
+<BR>   <form>  <INPUT TYPE=radio NAME="option" VALUE="3"  onClick=" Goahead (3);"><?php print $a[$randval2][3] ; } ?>
 <?php if ($a[$randval2][4]!=""){ ?>
-<BR>     <INPUT TYPE=radio NAME="option" VALUE="4"  onClick=" Goahead (4);"><?php print $a[$randval2][4] ; } ?>
+<BR>  <form>   <INPUT TYPE=radio NAME="option" VALUE="4"  onClick=" Goahead (4);"><?php print $a[$randval2][4] ; } ?>
 <?php if ($a[$randval2][5]!=""){ ?>
-<BR>     <INPUT TYPE=radio NAME="option" VALUE="5"  onClick=" Goahead (5);"><?php print $a[$randval2][5] ; } ?>
-<BR>     <input type=text name=response size=8>
-
-
+<BR>  <form>   <INPUT TYPE=radio NAME="option" VALUE="5"  onClick=" Goahead (5);"><?php print $a[$randval2][5] ; } ?>
+<BR>  <form>   <input type=text name=response size=8>
 </FORM>
-
+<!-- adding image -->
+<br><img src="images/asiphe.jpg" class="img-fluid" alt="Responsive image">
+<!-- checking Conditions -->
 <?php
-}else{
-?>
-<TR><TD ALIGN=Center>
-The Quiz has finished
-<BR>FOR CORRECT RESPONSES: <?php print $percentage ; ?> %
-<p><A HREF="<?php print $address; ?>">First Page</a>
+}else if($percentaje <= 40 ){
 
-<?php } ?>
-
-</TD></TR>
-</TABLE>
-<div class="image">
-<img src="images/asiphe.jpg" class="img-fluid" alt="Responsive image">
-</div>
-</CENTER>
-<?php
- if($percentage <= 40 ){
 ?>
-<TR><TD ALIGN=Center>
-The Quiz has finished 
-<br> You can try harder
-<BR>Percentage of correct responses: <?php print $percentage ; ?> %
-<p><A href="index.php">Home Page</a>
-<?php } 
-else if($percentage >= 41 &&  $percentage <=70){
-        echo "Well done ,keep on trying";
-    ?>
-     <?php print $percentage ; ?> %
-    <p><A href="index.php">Back to the top</a>
-    <?php } 
+ <TR><TD ALIGN=Center>
+  
+   <BR>Percentage of correct responses: <?php print $percentaje ; ?> %
+    <p><A href="index.php">Home Page</a>
+     <?php }
+else if($percentaje >= 41 &&  $percentaje <=70){
+?>
+ <TR><TD ALIGN=Center>
+  
+   <BR>Percentage of correct responses: <?php print $percentaje ; ?> %
+    <p><A href="index.php">Home Page</a>
+     <?php }
 else{
-        echo "You can do more";
 ?>
+ <TR><TD ALIGN=Center>
+  
+  <BR>Percentage of correct responses: <?php print $percentaje ; ?> %
+   <p><A href="index.php">Home Page</a>
+     <?php } ?>
+       </TD></TR>
+       </TABLE>
+       </TD></TR>
+       </TABLE>
+</CENTER>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
 
 
-<BR>Showing some score <?php print $percentage ; ?> %
-<p><A href="index.php">Home Page</a>
-<?php } ?>
-</TD></TR>
-</TABLE>
-</TD></TR>
-</TABLE>
 
-</BODY>
-</HTML>
+
+
+
+
+
+
+
+
