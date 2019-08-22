@@ -288,6 +288,7 @@ if (number==<?php print $a[$randval2][6] ; ?>){
 <!-- checking Conditions -->
 <?php
 }else if($percentaje <= 40 ){
+        echo "Try again!"
 
 ?>
  <TR><TD ALIGN=Center>
@@ -296,6 +297,8 @@ if (number==<?php print $a[$randval2][6] ; ?>){
     <p><A href="index.php">Home Page</a>
      <?php }
 else if($percentaje >= 41 &&  $percentaje <=70){
+        echo "You doing well"
+      
 ?>
  <TR><TD ALIGN=Center>
   
@@ -307,7 +310,7 @@ else{
  <TR><TD ALIGN=Center>
   
   <BR>Percentage of correct responses: <?php print $percentaje ; ?> %
-   <p><A href="index.php">Home Page</a>
+   <p><A href="index.php">Restart your quiz</a>
      <?php } ?>
        </TD></TR>
        </TABLE>
