@@ -326,7 +326,7 @@ else if($percentage >= 41 &&  $percentage <=70){
         echo "Well done ,keep on trying";
     ?>
      <?php print $percentage ; ?> %
-    <p><A href="index.php">Home Page</a>
+    <p><A href="index.php">Back to the top</a>
     <?php } 
 else{
         echo "You can do more";
