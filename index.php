@@ -7,12 +7,16 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Acme|Great+Vibes|Lexend+Deca&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
 
 
- <link rel="stylesheet" type="text/css" href="css/main.css">
- <h1>HOW MUCH DO U KNOW ABOUT TECH? </h1>
+<div class="container">
+  
+ 
+ 
+  <h1>HOW MUCH DO U KNOW ABOUT TECH? </h1>
 <?php
 error_reporting(0);
 
@@ -44,32 +48,34 @@ $a = array(
 3 => array(
    0 => "Cybersecurity is a ",
    1 => "Hacking",
-   2 => " security is the protection of computer systems from the theft of or damage to their hardware, software, or electronic data, as well as from the disruption or misdirection of the services they provide",
+   2 => "Computer systems from the theft of or damage to their hardware,
+    software, or electronic data, as well as from the disruption
+     or misdirection of the services they provide",
    3 => "hardware",
    4 => "software",
    5 => "non of the above",
    6 => 2
 ),
 4 => array(
-   0 => "what is internet",
+   0 => "What is internet?",
    1 => "3 and 4",
    2 => "url",
    3 => "search engine",
    4 => "world wide web",
-   5 => "The Internet (portmanteau of interconnected network) is the global system of interconnected computer networks that use the Internet protocol suite (TCP/IP) to ...",
+   5 => "The Internet  is the global system of interconnected computer",
    6 => 5
 ),
 5 => array(
-   0 => "what is a developer?",
+   0 => "What is a developer?",
    1 => "Someone who likes computers",
    2 => "a person tha fixes computers",
-   3 => "A developer is an individual that builds and create software and applications",
+   3 => "A person that builds and create software and applications",
    4 => "a computer programm",
    5 => "All of the above",
    6 => 3
 ),
 6 => array(
-   0 => "Type of an array",
+   0 => "Types of an array",
    1 => "Indexed arrays",
    2 => "bottom arrays",
    3 => "top arrays",
@@ -78,7 +84,7 @@ $a = array(
    6 => 1
 ),
 7 => array(
-   0 => "Electric shock",
+   0 => "What is electric shock?",
    1 => "electricity in water",
    2 => "flow of current",
    3 => "2 and 5",
@@ -87,7 +93,7 @@ $a = array(
    6 => 5
 ),
 8 => array(
-   0 => "Gmail is used for",
+   0 => "What is Gmail used for..",
    1 => "Sending messages",
    2 => "Gmail uses labels to help you organize with more flexibility. A conversation can have several labels, so you're not forced to choose one particular folder for messages. You can also create filters to automatically manage incoming mail. Starring messages is another way you can organize your inbox.",
    3 => "creating profiles",
@@ -96,7 +102,7 @@ $a = array(
    6 => 2
 ),
 9 => array(
-   0 => "PC stands for ?",
+   0 => " What does PC stands for ?",
    1 => "Print copies",
    2 => "photo edit computers",
    3 => "pave cop",
@@ -123,7 +129,7 @@ $a = array(
    6 => 2
 ),
 12 => array(
-   0 => "The use of IP address",
+   0 => "The use of IP address is ..",
    1 => "To know your physical address",
    2 => "An IP address lookup will determine the geolocation of any IP address. The results of the IP address lookup will show you the city, state/region, postal/zip code, country name, ISP, and time zone. ... Your IP Location can be found using our IP Lookup tool",
    3 => "To track time.",
@@ -150,7 +156,7 @@ $a = array(
    6 => 3
 ),
 15 => array(
-   0 => "what is mySql",
+   0 => "what is mySql?",
    1 => "server side",
    2 => "a color code",
    3 => "Built on MySQL Enterprise Edition and powered by the Oracle Cloud, Oracle MySQL Cloud Service provides a simple, automated, integrated and enterprise ...",
@@ -168,7 +174,7 @@ $a = array(
    6 => 3
 ),
 17 => array(
-   0 => "LAN stand for",
+   0 => "LAN stand for?",
    1 => "low and nasty",
    2 => "A local-area network (LAN) is a computer network that spans a relatively small area",
    3 => "log in and navigate",
@@ -177,7 +183,7 @@ $a = array(
    6 => 2
 ),
 18 => array(
-   0 => "what is a WAN",
+   0 => "what is a WAN?",
    1 => "wide are Nertwork",
    2 => " lacking enthusiasm or energy.",
    3 => "wanders",
@@ -186,7 +192,7 @@ $a = array(
    6 => 1
 ),
 19 => array(
-   0 => "How old is internet",
+   0 => "How old is internet?",
    1 => ".  it turns 28 in 2014",
    2 => ". it turns 28 in 2011",
    3 => ".  it turns 28 in 2012",
@@ -194,8 +200,8 @@ $a = array(
    5 => " turns 28 in 2017",
    6 => 5
 ),
-20 => array(
-   0 => "what is interface",
+30 => array(
+   0 => "what is interface?",
    1 => "a point where two systems, subjects, organizations, etc. meet and interact",
    2 => "internet",
    3 => "software",
@@ -207,7 +213,7 @@ $a = array(
 
 
 // total number of questions
-$max=20;
+$max=30;
 $question=$_POST["question"] ;
 // for counting the score
 if ($_POST["Randon"]==0){
@@ -259,8 +265,8 @@ if (number==<?php print $a[$randval2][6] ; ?>){
 <?php if ($question<$max){ ?>
 <TR><TD ALIGN=RIGHT>
 <FORM METHOD=POST NAME="percentaje" ACTION="<?php print $URL; ?>">
-<BR>Percentaje of correct responses: <?php print $percentaje; ?> %
-<BR><input type=submit value="Next >>">
+<br>Percentaje of correct responses: <?php print $percentaje; ?> %
+<br><input type=submit value="Next >>">
 <input type=hidden name=response value=0>
 <input type=hidden name=question value=<?php print $question; ?>>
 <input type=hidden name=ok value=<?php print $ok; ?>>
@@ -273,43 +279,51 @@ if (number==<?php print $a[$randval2][6] ; ?>){
 <!-- creating post method -->
 <FORM METHOD=POST NAME="question" ACTION="">
 <?php print "<b>".$a[$randval2][0]."</b>"; ?>
-<BR>  <form>   <INPUT TYPE=radio NAME="option" VALUE="1"  onClick=" Goahead (1);"><?php print $a[$randval2][1] ; ?>
-<BR>  <form>   <INPUT TYPE=radio NAME="option" VALUE="2"  onClick=" Goahead (2);"><?php print $a[$randval2][2] ; ?>
+<br>  <form>   <input TYPE=radio NAME="option" VALUE="1"  onClick=" Goahead (1);"><?php print $a[$randval2][1] ; ?>
+<br>  <form>   <input TYPE=radio NAME="option" VALUE="2"  onClick=" Goahead (2);"><?php print $a[$randval2][2] ; ?>
 <?php if ($a[$randval2][3]!=""){ ?>
-<BR>   <form>  <INPUT TYPE=radio NAME="option" VALUE="3"  onClick=" Goahead (3);"><?php print $a[$randval2][3] ; } ?>
+<br>   <form>  <input TYPE=radio NAME="option" VALUE="3"  onClick=" Goahead (3);"><?php print $a[$randval2][3] ; } ?>
 <?php if ($a[$randval2][4]!=""){ ?>
-<BR>  <form>   <INPUT TYPE=radio NAME="option" VALUE="4"  onClick=" Goahead (4);"><?php print $a[$randval2][4] ; } ?>
+<br>  <form>   <input TYPE=radio NAME="option" VALUE="4"  onClick=" Goahead (4);"><?php print $a[$randval2][4] ; } ?>
 <?php if ($a[$randval2][5]!=""){ ?>
-<BR>  <form>   <INPUT TYPE=radio NAME="option" VALUE="5"  onClick=" Goahead (5);"><?php print $a[$randval2][5] ; } ?>
-<BR>  <form>   <input type=text name=response size=8>
+<br>  <form>   <input TYPE=radio NAME="option" VALUE="5"  onClick=" Goahead (5);"><?php print $a[$randval2][5] ; } ?>
+<br>  <form>   <input type=text name=response size=8>
 </FORM>
 <!-- adding image -->
-<br><img src="images/asiphe.jpg" class="img-fluid" alt="Responsive image">
+
+
+
 <!-- checking Conditions -->
 <?php
 }else if($percentaje <= 40 ){
         echo "Try again!"
 
 ?>
+
  <TR><TD ALIGN=Center>
   
-   <BR>Percentage of correct responses: <?php print $percentaje ; ?> %
+   <br>Percentage of correct responses: <?php print $percentaje ; ?> %
     <p><A href="index.php">Home Page</a>
      <?php }
 else if($percentaje >= 41 &&  $percentaje <=70){
         echo "You doing well"
       
 ?>
+ <?php }
+else if($percentaje >= 70 &&  $percentaje <=100){
+        echo "You doing well"
+      
+?>
  <TR><TD ALIGN=Center>
   
-   <BR>Percentage of correct responses: <?php print $percentaje ; ?> %
+   <br>Percentage of correct responses: <?php print $percentaje ; ?> %
     <p><A href="index.php">Home Page</a>
      <?php }
 else{
 ?>
  <TR><TD ALIGN=Center>
   
-  <BR>Percentage of correct responses: <?php print $percentaje ; ?> %
+  <br>Percentage of correct responses: <?php print $percentaje ; ?> %
    <p><A href="index.php">Restart your quiz</a>
      <?php } ?>
        </TD></TR>
@@ -320,8 +334,15 @@ else{
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
+
+
+
+</div>
+ 
+
+
 </html>
+
 
 
 

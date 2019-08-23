@@ -1,7 +1,9 @@
 body{
    
-    color: beige;
-    background-color: blue;
+    color: rgb(3, 3, 1);
+   
+    height: 100%;
+    background-color: black;
    
    
 
@@ -9,9 +11,31 @@ body{
 h1{
  
     font-family: 'Great Vibes', cursive;
-font-family: 'Lexend Deca', sans-serif;
-font-family: 'Acme', sans-serif;
+    font-family: 'Lexend Deca', sans-serif;
+    font-family: 'Acme', sans-serif;
+    padding-left:10%;
+    text-shadow: 4px 4px green;
 }
 .image{
     margin:50px;
 }
+.container{
+    width: 100%;
+    
+    background-color:red;
+   
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow-y: auto;
+    margin: 50px;
+    border-radius: 10%;
+
+/*styinling the wrap*/
+
+  
+  
+    
+
